@@ -24,6 +24,12 @@ const titleUpperCase = function(tutorial)  {
 };
 
 function titleCased() {
-  const new_tutorials = tutorials.map(titleUpperCase);
-  return new_tutorials;
+  return tutorials.map(function(tutorial) {
+    tutorial = tutorial.split(" ")
+    let newTutorial = []
+    for (let word of words) {
+       newTutorial.push(word.charAt(0).toUpperCase() + word.slice(1));
+    }
+    return newTutorial.join(' ')
+  })
 }
